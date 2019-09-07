@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/united/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="style.css">
+   
+  
+  <title>Cotizacion</title>
+</head>
+
+<img src="img/Anotación 2019-09-06 141736.png" alt="">
+<!-- <input type="file" id="file4" class="oculto-impresion" accept="image/*" onchange="mostrar4()"/ height="161" width="400"> -->
+    <br>
+    <img id="img4"/>
+<table class="tabla">
+    <tr>
+        
+       
+    </tr>
+
+    <tr><tr>
+        <td><input type="text" class="direccion-2 oculto-impresion" disabled></td>
+    <td class="m"><input type="text" id="direccion" class="form-control" value="San Salvador," style="text-align: right" disabled></td>
+    <td class="de"><input type="date" id="departamento" placeholder="Departamento" class="dir form-control" style="padding: 3%" value="Municipio:"></td>
+
+    </tr>
+        <td class="d"> <table>
+            <tr>
+              <td><input type="text" value="Estimado(a)" class="form-control"></td>
+              <tr><td><input type="text" value="" class="form-control" placeholder="Nombre:"></td></tr>
+              <tr><td><input type="text" value="" class="form-control" placeholder="Empresa:"></td></tr>
+              <tr><td><input type="text" value="Presente(a)" class="form-control" placeholder=""></td></tr>
+            </tr>
+
+            
+    
+          </table>  </td>
+   
+  
+    </tr>
+
+</table>
+    
+
+  
+ <img src="img/Anotación 2019-09-06 142716.png" alt="">
+    
+   
+<!--   
+  <table>
+      <td class="registro"><input type="text" id="registro" placeholder="Registro De IVA" class="resgistr form-control" style="padding: 3%"  name="r"></td>
+  <td class="nt"><input type="text" id="nit" placeholder="NIT" class="ni form-control" style="padding: 3%" name="na"></td>
+  </table>
+  
+  <table>
+      <td class="g"><input type="text" id="gi" placeholder="GIRO" class="gr form-control" style="padding: 3%" name="g"></td> 
+  </table>
+  <table>
+    <td class="s"><input type="text" id="phone" placeholder="Telefono" class="gr form-control" style="padding: 3%"></td> 
+</table> -->
+
+<table>
+    <thead>
+        <tr>
+              <th><input type="text" value="CANTIDAD" id="des11" disabled class="form-control" style="text-align: center; color: red;" ></th>
+             <th><input type="text" value="PRODUCTO" id="des11" disabled class="form-control" style="text-align: center; color: red;" ></th>
+             <th><input type="text" value="UNIDAD" id="des11" disabled class="form-control" style="text-align: center; color: red;" ></th>
+            
+             <th><input type="text" value="TOTAL" id="des11" disabled class="form-control" style="text-align: center; color: red;" ></th>
+        </tr>
+    </thead>
+    <tbody>
+       
+      
+      
+      
+      
+      <tr>
+            
+            <td>
+              <label for="">N° Unidades  </label>
+               <input type="text"   class="monto input form-control" name="unitario" value="" style="padding: 5%; text-align: center" id="des2">
+            </td>
+            <td>
+                        
+    <input type="file" id="file" class="oculto-impresion" accept="image/*" onchange="mostrar()"/ height="161" width="400">
+    <br>
+    <img id="img"/ width="300" height="200">
+    <button onclick="myFunction()" class="oculto-impresion btn-primary">Ocultar/Mostrar</button>
+    <textarea name="" id="t1" cols="60" rows="3" class="form-control" style="text-align: center" ></textarea>
+                 
+                  </td>
+            <td>
+               <input type="text"  class="monto input form-control" name="cantidad" style="text-align: center" id="des6">
+            </td>
+  
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+            <td>
+                 <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                   <input type="text" class="monto total form-control" value="0" disabled style="padding: 0%; text-align: center" id="des7">
+                  </div>
+               
+                <input type="hidden" class="not-visible form-control" value="0" disabled style="padding: 0%; background: white" id="total">
+            </td>
+        </tr>
+        <tr>
+           
+            <td>
+              <input type="text" class="monto input form-control"  name="unitario2" value="" style="padding: 0%; text-align: center" id="t">
+            </td>
+            <td>
+                        
+    <input type="file" id="file2" class="oculto-impresion" accept="image/*" onchange="mostrar2()"/ height="161" width="400">
+    <br>
+    <img id="img2"/ width="300" height="200">
+    <textarea name="" id="tex2" cols="60" rows="3" class="form-control" style="text-align: center" ></textarea>
+    <button onclick="myFunction2()" class="oculto-impresion btn btn-info" >Ocultar/Mostrar</button>       
+               </td>
+            <td>
+               <input type="text" class="monto input form-control" name="cantidad2" style="text-align: center" id="can2">
+            </td>
+  
+            <td>
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                   <input type="text" class="monto total form-control" value="0" disabled style="padding: 0%; text-align: center"  id="des8">
+                  </div>
+               
+            </td>
+
+            <td>
+              
+              
+               <input type="hidden" class="not-visible form-control" value="0" disabled style="padding: 0%; background: white" id="total">
+           </td>
+       </tr>
+       <tr>
+          
+
+
+           <td>
+             <input type="" class="monto input form-control"  name="unitario2" value="" style="padding: 0%; text-align: center" id="des55">
+           </td>
+           <td>
+
+             
+               <input type="text" class="monto input form-control" name="cantidad2" style="text-align: center" id="can2">
+            </td>
+  
+            <td>
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                   <input type="text" class="monto total form-control" value="0" disabled style="padding: 0%; text-align: center"  id="des8">
+                  </div>
+               
+            </td>
+
+            <td>
+              
+              
+               <input type="hidden" class="not-visible form-control" value="0" disabled style="padding: 0%; background: white" id="total">
+           </td>
+       </tr>
+       <tr>
+          
+
+
+           <td>
+             <input type="text" class="monto input form-control"  name="unitario2" value="" style="padding: 0%; text-align: center" id="des55">
+           </td>
+           <td>
+                       
+   <input type="file" id="file3" class="oculto-impresion" accept="image/*" onchange="mostrar3()"/ height="161" width="400">
+   <br>
+   <img id="img3"/ width="300" height="200">
+   <textarea name="" id="tex24" cols="60" rows="3" class="form-control" style="text-align: center" ></textarea>
+   <button onclick="myFunction3()" class="oculto-impresion btn btn-warning">Ocultar/Mostrar</button>       
+              </td>
+           <td>
+              <input type="text" class="monto input form-control" name="cantidad2" style="text-align: center" id="can24">
+           </td>
+ 
+           <td>
+               <div class="input-group">
+                   <span class="input-group-addon">$</span>
+                  <input type="text" class="monto total form-control" value="0" disabled style="padding: 0%; text-align: center"  id="des88">
+                 </div>
+              
+           </td>
+        </tr>
+        <tr>
+            
+          
+            <td>
+            <input type="text" class="monto input form-control" name="unitario2" value="" style="padding: 5%; text-align: center" id="total2" cols="30" rows="3">
+            </td>
+            <td> 
+              
+    <input type="file" id="file6" class="oculto-impresion" accept="image/*" onchange="mostrar6()"/ height="161" width="400">
+    <br>
+    <img id="img6"/ width="300" height="200">
+    <button onclick="myFunction4()" class="oculto-impresion btn btn-success">Ocultar/Mostrar</button>
+                 
+                  <textarea name="" id="text6" cols="60" rows="3" class="form-control" style="text-align: center"></textarea>
+                  <div>
+                    
+                   </div>
+                   <div>
+                      <h4 class="h">IVA</h4> <select name="monto" class="form-control " placeholder="Monto" onChange="calculo();">
+                          <option value="0" selected>Elegir</option>
+                          <option value="">Incluye IVA</option>
+                          <option value="">No Incluey IVA</option>
+                        
+                          <
+                      </select>
+
+                     <h4 class="h"> Condiciones De Pago</h4> <select name="monto" class="form-control " placeholder="Monto" onChange="calculo();">
+                          <option value="0" selected>Elegir</option>
+                          <option value="">Contado</option>
+                          <option value="">Credito</option>
+                          <option value="">Credito 7 Dias</option>
+                          <option value="">Credito 15 Dias</option>
+                          <option value="">Credito 21 Dias</option>
+                          <option value="">Credito 30 Dias</option>
+                          <
+                      </select>
+                   </div>
+
+                   <h4 class="h">Flete Por Envio</h4> <select name="monto" class="form-control n" placeholder="Monto" onChange="calculo();">
+                      <option value="0" selected>Elegir</option>
+                      <option value="">Aplica</option>
+                      <option value="">No Aplica</option>
+                      <
+                  </select>
+
+                  <h4 class="h">Forma De Pago</h4> <select name="monto" class="form-control" placeholder="Monto" onChange="calculo();">
+                      <option value="0" selected>Elegir</option>
+                      <option value="">De Contado/Contra Entrega</option>
+                      <option value="">50% Anticipo Y 50% Pago Contra Entrega</option>
+                      <option value="">Pago Total Por Anticipado</option>
+                      <
+                  </select>
+                  
+                  <h4 class="h">Forma De Envio</h4> <select name="monto" class="form-control " placeholder="Monto" onChange="calculo();">
+                      <option value="0" selected>Elegir</option>
+                      <option value="">A Domicilio</option>
+                      <option value="">A Domicilio Gratis</option>
+                      <option value="">A Domicilio Con Costo Con Flete</option>
+                      <
+                  </select>
+
+                  <h4 class="h">Garantia</h4> <select name="monto" class="form-control " placeholder="Monto" onChange="calculo();">
+                      <option value="0" selected>Elegir</option>
+                      <option value="">1 Mes</option>
+                      <option value="">3 Meses</option>
+                      <option value="">6 Meses</option>
+                      <option value="">12 Meses</option>
+                      <option value="">18 Meses</option>
+                      <option value="">24 Meses</option>
+                      <
+                  </select>
+
+                  <h4 class="h">Fabricacion</h4> <select name="monto" class="form-control " placeholder="Monto" onChange="calculo();">
+                      <option value="0" selected>Elegir</option>
+                      <option value="">No Aplica</option>
+                      <option value="">Aplica A Partir De Orden De Compra Firmada Y Sellada</option>
+                      <option value="">Aplica A Partir De Recibido Anticipo Y Orden De Compra Firmada Y Sellada</option>
+                     
+                      <
+                  </select>
+                 </td>
+                
+               
+            
+            <td>
+              
+              <input type="text" class="monto input form-control" name="cantidad3" value="" style="padding: 5%; text-align: center" id="total3" cols="30" rows="3">
+            </td>
+  
+           
+            <td>
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                   <input type="text" class="monto total form-control" value="0" disabled style="width: 30%; text-align: center" id="total4" cols="30" rows="3" >
+                   <div>
+                     
+                   </div>
+                   
+                  </div>
+              
+            </td>
+
+            <td>
+                
+              
+               <input type="hidden" class="not-visible form-control" value="0" disabled style="padding: 0%; background: white" id="total">
+           </td>
+       </tr>
+       <tr>
+          
+      
+            
+   
+        
+
+
+
+           </td>
+            
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                <input type="text" value="$" class="form-control" style="text-align: center">
+
+             
+            </td>
+            <td>  <div class="input-group">
+              <span class="input-group-addon"></span>
+               
+            </div>
+  
+  <input type="hidden" class="not-visible form-control" value="0" disabled style="padding: 5%; background: white" id="total">
+  <input type="submit"id="precio_no_tax"  class="monto totales form-control" name="afectas" value=""    onChange="multiplicar();"   style="width: 100%; text-align: center" onclick="PasarValor();" >
+  <!-- <input type="submit" value="Crear Nueva Factura" class="btn btn-success"> -->
+  </form>
+
+
+  <button class="btn btn-primary oculto-impresion" id="boton" onclick="guardar()" >
+      Guardar
+    </button>
+        
+     
+    </div>
+  
+    <button onclick="javascript:imprimir()" class="oculto-impresion btn btn-warning" >Imprimir</button>
+ 
+    
+
+
+
+   
+    
+</script>
+<script src="app.js"></script>
+<script src="cal.js"></script>
+
+</body>
+
+</html>
+
+
